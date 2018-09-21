@@ -1,20 +1,108 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/docs/ts/latest/tutorial/">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<!-- <mat-checkbox
+  #showDetails
+  [value]=""
+  checked="isChecked"
+  (change)="onChange($event)">show details
+</mat-checkbox>
+  <div *ngIf="showDetails.checked">some details.</div>
+
+
+<mat-radio-group>
+  <mat-radio-button value="1">Option 1</mat-radio-button>
+  <mat-radio-button value="2">Option 2</mat-radio-button>
+  <mat-radio-button value="3">Option 3</mat-radio-button>
+</mat-radio-group> -->
+
+<!-- <mat-form-field [(ngModel)]="color">
+  <mat-select placeholder="favorite color">
+    <mat-option *ngFor="let color of colors" [value]="color.id">{{ color.name }}</mat-option>
+  </mat-select>
+</mat-form-field> -->
+<!-- <mat-form-field>
+  <mat-select [(ngModel)]="color">
+    <mat-option *ngFor="let color of colors" [value]="color.id">{{ color.name }}</mat-option>
+  </mat-select>
+</mat-form-field> -->
+<!-- 
+<form action="" class="m-form">
+  <mat-form-field>
+    <input
+      ngModel
+      #food="ngModel"
+      matInput placeholder="favorite food" value="sushi" required>
+    <mat-hint>Type a food</mat-hint>
+    <span matSuffix>@food.com</span>
+    <span matPrefix>@admin.</span>
+    <mat-error>
+      field is req
+    </mat-error>
+  </mat-form-field>
+</form> -->
+
+  <!-- <mat-form-field>
+      <textarea matInput matTextareaAutosize placeholder="asdf" name="" id="" cols="30" rows="2"></textarea>
+  </mat-form-field> -->
+
+<!-- 
+<mat-form-field>
+  <input matInput [matDatepicker]="picker1" placeholder="title">
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <button matSuffix [matDatepickerToggle]="picker1"></button>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field> -->
+
+
+<!-- <mat-form-field>
+    <input
+      (focus)="picker.open()"
+      [min]="minDate"
+      [max]="maxDate"
+      matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker touchUi="true"></mat-datepicker>
+  </mat-form-field>
+
+
+  <br> -->
+  <mat-icon>add_alert</mat-icon>
+  <button color="primary" mat-raised-button>a sdf</button>
+  <button color="accent" mat-raised-button>asdf</button>
+  <button color="warn" mat-raised-button>asdf</button>
+  <button color="warn" mat-fab><mat-icon>check</mat-icon></button> -->
+
+
+  <p class="mat-body-1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis, nihil dolores dolorem eveniet incidunt repellat possimus suscipit ipsam illo aperiam, obcaecati expedita quam cum atque nemo laudantium aliquam? Dolore, corrupti.</p>
+
+  <!-- <mat-chip-list>
+    <mat-chip selected="true" color="accent">asadf</mat-chip>
+    <mat-chip>asdfg</mat-chip>
+    <mat-chip>ert</mat-chip>
+  </mat-chip-list>   -->
+  <!-- <mat-chip-list>
+    <mat-chip
+      *ngFor="let category of categories"
+      (click)="selectCategory(category)"
+      [selected]="category.selected"
+      >{{ category.name }}</mat-chip>
+  </mat-chip-list>
+  <br>
+  <mat-progress-spinner
+  mode="indeterminate" [value]="progress"></mat-progress-spinner>
+
+  <span
+  matTooltip="text"
+  matTooltipPosition="right">some text</span>
+
+  <mat-tab-group>
+    <mat-tab label="billing">content</mat-tab>
+    <mat-tab label="shipping">content2</mat-tab>
+  </mat-tab-group>
+
+  <button
+  (click)="openDiag()"
+  mat-raised-button>open diag</button> -->
+
+  <h1>heading1</h1>
+  <h2>heading2</h2>
+  

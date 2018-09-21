@@ -1,0 +1,40 @@
+
+@import "~@angular/material/_theming.scss";
+
+@include mat-core();
+
+$app-primary: mat-palette($mat-blue, 400);
+$app-accent: mat-palette($mat-yellow, 700);
+$app-warn: mat-palette($mat-red, 400);
+
+$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+
+@include angular-material-theme($app-theme);
+
+// custom typography
+
+$app-typography: mat-typography-config(
+  $font-family: '"Open Sans", sans-serif'
+)
+
+
+
+// $color: blue;
+
+// h1,h2 {
+//   color: $color;
+// }
+
+// @mixin soft-border($border-radius) {
+//   border: 1px solid #cccccc;
+//   border-radius: $border-radius;
+//   padding: 10px;
+// }
+
+// .box {
+//   @include soft-border(5);
+// }
+
+// .modern-box {
+//   @include soft-border(10);
+// }
