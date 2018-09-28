@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { fromJS, Map } from 'immutable';
 
 import { NgReduxModule, NgRedux } from '@angular-redux/store'; // <- New
 
@@ -10,6 +11,7 @@ import { AppComponent } from './app.component';
 import { IAppState, rootReducer, INITIAL_STATE } from './store';
 
 import { MaterialModule } from './modules/material.module';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { MaterialModule } from './modules/material.module';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(ngRedux: NgRedux<IAppState>) {
-    ngRedux.configureStore(rootReducer, INITIAL_STATE);
+  constructor(ngRedux: NgRedux<Map<string, any>>) {
+    ngRedux.configureStore(rootReducer, fromJS(INITIAL_STATE));
   }
 }

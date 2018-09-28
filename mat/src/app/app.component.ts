@@ -1,26 +1,38 @@
 import { Component } from '@angular/core';
 import { IAppState } from './store';
-import { NgRedux } from '@angular-redux/store';
-import { INCREMENT } from './actions';
+import { NgRedux, select } from '@angular-redux/store';
+import { fromJS, Map } from 'immutable';
+import { INCREMENT, DECREMENT } from './actions';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'app works!';
-  constructor(private ngRedux: NgRedux<IAppState>) {
-    ngRedux.subscribe(() => {
-      console.log(ngRedux.getState());
-    });
+  @select() readonly count$: number;  // state.get('count)
+  // @select(['messaging', 'newMessages']) newMessages;
+  // @select((s: IAppState) => s.messaging.newMessages) newMessagesCount;
+
+  constructor(private ngRedux: NgRedux<Map<string, any>>) {
+      // this.subscription = ngRedux.select<number>('count')
+      //   .subscribe(newCount => this.count$ = newCount);
+
+      // this.count$ = ngRedux.select<number>('count');
   }
 
   increment() {
-    // this.counter++;
-    this.ngRedux.dispatch({ type: INCREMENT});
-  } // <- New
+    this.ngRedux.dispatch({ type: INCREMENT });
+  }
+
   decrement() {
-    this.ngRedux.dispatch({ type: 'DECREMENT'});
-  } // <- New
+    this.ngRedux.dispatch( { type: DECREMENT });
+  }
+
+  // ngOnDestroy() {
+  //   this.subscription.unsubscribe();
+  // }
 }
