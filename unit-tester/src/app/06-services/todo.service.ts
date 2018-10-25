@@ -1,16 +1,16 @@
 
 import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 
-export class TodoService { 
-  constructor(private http: Http) { 
+export class TodoService {
+  constructor(private http: Http) {
   }
 
   add(todo) {
     return this.http.post('...', todo).map(r => r.json());
   }
 
-  getTodos() { 
+  getTodos() {
     return this.http.get('...').map(r => r.json());
   }
 
