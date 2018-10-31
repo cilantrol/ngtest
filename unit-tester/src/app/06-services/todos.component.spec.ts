@@ -38,14 +38,15 @@ describe('TodosComponent', () => {
   });
 
   it('should add new todo returned from server', () => {
+    const todo = {id: 1};
     const spy = spyOn(service, 'add').and.callFake(t =>   {
 
-      return from([ {id: 1} ]);
+      return from([ todo ]);
     });
 
     component.add();
 
-    expect(component.todos.indexOf({id: 1})).toBeGreaterThan(-1);
+    expect(component.todos.indexOf(todo)).toBeGreaterThan(-1);
   });
 
   it('should msg property if server returns error when adding new property', () => {
@@ -53,7 +54,7 @@ describe('TodosComponent', () => {
 
     component.add();
 
-    expect(component.message).toBe('error from the server');
+    expect(component.message).toBe('error from server');
   });
 
   it('should call the server to delete a todo item if the user confirms', () => {

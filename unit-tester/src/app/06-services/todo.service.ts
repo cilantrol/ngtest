@@ -1,5 +1,6 @@
 
 import { Http } from '@angular/http';
+import { from } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export class TodoService {
@@ -7,14 +8,14 @@ export class TodoService {
   }
 
   add(todo) {
-    return this.http.post('...', todo).map(r => r.json());
+    return this.http.post('...', todo).pipe(map(r => r.json()));
   }
 
   getTodos() {
-    return this.http.get('...').map(r => r.json());
+    return this.http.get('...').pipe(map(r => r.json()));
   }
 
   delete(id) {
-    return this.http.delete('...').map(r => r.json());
+    return this.http.delete('...').pipe(map(r => r.json()));
   }
 }
