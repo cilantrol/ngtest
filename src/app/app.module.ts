@@ -12,11 +12,11 @@ import { VoterComponent } from './1-voter/voter.component';
 
 import { routes } from './app.routes';
 import { UsersComponent } from './users/users.component';
-// import { NavComponent } from './nav/nav.component';
+import { NavComponent } from './nav/nav.component';
 import { HighlightDirective } from './highlight.directive';
 import { GreeterComponent } from './greeter/greeter.component';
 import { TodoService } from './2-todos/todo.service';
-import { NavComponent } from './nav/nav.component';
+
 
 @NgModule({
   declarations: [
@@ -26,10 +26,9 @@ import { NavComponent } from './nav/nav.component';
     UserDetailsComponent,
     VoterComponent,
     UsersComponent,
-    // NavComponent,
+    NavComponent,
     HighlightDirective,
     GreeterComponent,
-    NavComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

@@ -39,15 +39,19 @@ describe('TodosComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should load todos from server', () => {
+  it('should load todos from server', async(() => {
     const service = TestBed.get(TodoService);
     // Test bed does this for us
     // fixture.debugElement.injector.get(TodoService);
 
-    spyOn( service, 'getTodos').and.returnValue(from([ [1, 2, 3] ]));
+    spyOn( service, 'getTodosPromise').and.returnValue(Promise.resolve( [1, 2, 3] ));
 
     fixture.detectChanges();
-    expect(component.todos.length).toBe(3);
-  });
+
+    fixture.whenStable().then((() => {
+      expect(component.todos.length).toBe(3);
+    }));
+
+  }));
 
 });

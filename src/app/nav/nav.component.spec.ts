@@ -4,6 +4,7 @@ import { NavComponent } from './nav.component';
 import { By } from '@angular/platform-browser';
 import { RouterOutlet, RouterLinkWithHref } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { DebugElement } from '@angular/core';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -25,12 +26,6 @@ describe('NavComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should have a router outlet', () => {
-    const de = fixture.debugElement.query(By.directive(RouterOutlet));
-
-    expect(de).not.toBeNull();
   });
 
   it('should have a link to todos page', () => {

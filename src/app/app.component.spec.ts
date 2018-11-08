@@ -23,4 +23,10 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   }));
+
+  it('should have a router outlet', () => {
+    const de = fixture.debugElement.query(By.directive(RouterOutlet));
+
+    expect(de).not.toBeNull();
+  });
 });
