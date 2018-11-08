@@ -1,6 +1,6 @@
 
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, tick, fakeAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 import { TodosComponent } from './todos.component';
@@ -39,7 +39,7 @@ describe('TodosComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should load todos from server', async(() => {
+  it('should load todos from server', fakeAsync(() => {
     const service = TestBed.get(TodoService);
     // Test bed does this for us
     // fixture.debugElement.injector.get(TodoService);
@@ -48,10 +48,11 @@ describe('TodosComponent', () => {
 
     fixture.detectChanges();
 
-    fixture.whenStable().then((() => {
-      expect(component.todos.length).toBe(3);
-    }));
-
+    // fixture.whenStable().then((() => {
+    //   expect(component.todos.length).toBe(3);
+    // }));
+    tick();
+    expect(component.todos.length).toBe(3);
   }));
 
 });
